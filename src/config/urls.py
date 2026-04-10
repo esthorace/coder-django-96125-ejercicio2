@@ -23,4 +23,7 @@ from servicios import views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.index, name="index"),
+    path("cliente/", views.cliente_list, name="cliente_list"),
+    path("servicio/", views.servicio_list, name="servicio_list"),
+    path("pedido/", views.pedido_list, name="pedido_list"),
 ]

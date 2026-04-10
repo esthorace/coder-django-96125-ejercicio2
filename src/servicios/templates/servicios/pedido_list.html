@@ -1,0 +1,15 @@
+{% extends 'servicios/base.html' %}
+
+{% block contenido %}
+    <h1>Pedidos</h1>
+    {% for pedido in pedidos %}
+        <p>
+            <strong>Servicio:</strong> {{ pedido.servicio | upper }}
+            <strong>Cliente:</strong> {{ pedido.cliente | upper }}
+            <strong>Fecha:</strong> {{ pedido.fecha_solicitud }}
+            <strong>Estado:</strong> {{ pedido.estado }}
+        </p>
+    {% empty %}
+        <p>No hay registros</p>
+    {% endfor %}
+{% endblock contenido %}

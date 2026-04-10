@@ -10,10 +10,10 @@
     <body>
         <nav style="text-align: center;">
             <h1>Servicios</h1>
-            <a href="#">Home</a>
-            <a href="#">Clientes</a>
-            <a href="#">Servicios</a>
-            <a href="#">Pedidos</a>
+            <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'cliente_list' %}">Clientes</a>
+            <a href="{% url 'servicio_list' %}">Servicios</a>
+            <a href="{% url 'pedido_list' %}">Pedidos</a>
         </nav>
 
         <main>
