@@ -2,7 +2,7 @@
 
 {% block contenido %}
     <h1>Servicios</h1>
-    {% for servicio in servicios %}
+    {% for servicio in object_list %}
         <p>{{ servicio.nombre | upper }} $ {{ servicio.precio }}</p>
         {% if servicio.disponible %}
             ✅ Disponible

@@ -2,7 +2,7 @@
 
 {% block contenido %}
     <h1>Pedidos</h1>
-    {% for pedido in pedidos %}
+    {% for pedido in object_list %}
         <p>
             <strong>Servicio:</strong> {{ pedido.servicio | upper }}
             <strong>Cliente:</strong> {{ pedido.cliente | upper }}

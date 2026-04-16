@@ -17,13 +17,14 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
+from django.views.generic import TemplateView
 
-from servicios import views
+from servicios.views import cliente, pedido, servicio
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", views.index, name="index"),
-    path("cliente/", views.cliente_list, name="cliente_list"),
-    path("servicio/", views.servicio_list, name="servicio_list"),
-    path("pedido/", views.pedido_list, name="pedido_list"),
+    path("", TemplateView.as_view(template_name="servicios/index.html"), name="index"),
+    path("cliente/", cliente.ClienteList.as_view(), name="cliente_list"),
+    path("servicio/", servicio.ServicioList.as_view(), name="servicio_list"),
+    path("pedido/", pedido.PedidoList.as_view(), name="pedido_list"),
 ]
