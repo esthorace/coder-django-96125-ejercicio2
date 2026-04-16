@@ -1,0 +1,13 @@
+{% extends 'servicios/base.html' %}
+
+
+{% block contenido %}
+    <h1>Cliente - Detalle</h1>
+    
+    <p>Nombre: {{ object.nombre }}</p>
+    <p>Apellido: {{ object.apellido }}</p>
+    <p>Celular: {{ object.celular }}</p>
+    <p>Email: {{ object.email }}</p>
+    <p>Domicilio: {{ object.domicilio }}</p>
+
+{% endblock contenido %}
