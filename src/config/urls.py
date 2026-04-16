@@ -26,6 +26,11 @@ urlpatterns = [
     path("", TemplateView.as_view(template_name="servicios/index.html"), name="index"),
     path("cliente/", cliente.ClienteList.as_view(), name="cliente_list"),
     path("cliente/create/", cliente.ClienteCreate.as_view(), name="cliente_create"),
+    path(
+        "cliente/<int:pk>/update",
+        cliente.ClienteUpdate.as_view(),
+        name="cliente_update",
+    ),
     path("cliente/<int:pk>", cliente.ClienteDetail.as_view(), name="cliente_detail"),
     path(
         "cliente/<int:pk>/delete",
