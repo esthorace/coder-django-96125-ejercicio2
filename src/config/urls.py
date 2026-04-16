@@ -25,6 +25,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", TemplateView.as_view(template_name="servicios/index.html"), name="index"),
     path("cliente/", cliente.ClienteList.as_view(), name="cliente_list"),
+    path("cliente/<int:pk>", cliente.ClienteDetail.as_view(), name="cliente_detail"),
     path("servicio/", servicio.ServicioList.as_view(), name="servicio_list"),
     path("pedido/", pedido.PedidoList.as_view(), name="pedido_list"),
 ]

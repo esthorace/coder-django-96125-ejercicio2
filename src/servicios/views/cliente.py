@@ -10,4 +10,4 @@ class ClienteList(ListView):
 
 
 class ClienteDetail(DetailView):
-    pass
+    model = Cliente
