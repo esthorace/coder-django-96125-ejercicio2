@@ -1,5 +1,5 @@
 from django.urls import reverse_lazy
-from django.views.generic import DeleteView, DetailView, ListView
+from django.views.generic import CreateView, DeleteView, DetailView, ListView
 
 from servicios.models import Cliente
 
@@ -17,3 +17,7 @@ class ClienteDetail(DetailView):
 class ClienteDelete(DeleteView):
     model = Cliente
     success_url = reverse_lazy("cliente_list")
+
+
+class ClienteCreate(CreateView):
+    model = Cliente
