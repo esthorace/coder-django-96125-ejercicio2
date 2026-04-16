@@ -2,6 +2,9 @@
 
 {% block contenido %}
     <h1>Clientes</h1>
+
+    <button><a href="{% url 'cliente_create' %}">Crear nuevo cliente</a></button>
+
     {% for cliente in object_list %}
         <p>{{ cliente }}
             | <a href="{% url 'cliente_detail' cliente.id %}">👁️‍🗨️</a>

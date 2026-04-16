@@ -1,0 +1,11 @@
+{% extends 'servicios/base.html' %}
+
+{% block contenido %}
+    <h1>Cliente: Crear</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar</button>
+    </form>
+    <button><a href="{% url 'cliente_list' %}">Volver</a></button>
+{% endblock contenido %}
