@@ -1,0 +1,11 @@
+{% extends 'servicios/base.html' %}
+
+{% block contenido %}
+    <h1>Cliente: Borrar</h1>
+    <p>¿Seguro de eliminar "{{ object.nombre }} {{ object.apellido }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Sí, eliminar definitivamente</button>
+    </form>
+    <button><a href="{% url 'cliente_list' %}">Cancelar</a></button>
+{% endblock contenido %}

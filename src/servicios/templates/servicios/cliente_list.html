@@ -6,7 +6,7 @@
         <p>{{ cliente }}
             | <a href="{% url 'cliente_detail' cliente.id %}">👁️‍🗨️</a>
             | <a href="#">✏️</a>
-            | <a href="#">🗑️</a>
+            | <a href="{% url 'cliente_delete' cliente.id %}">🗑️</a>
         </p>
     {% empty %}
         <p>No hay registros</p>
