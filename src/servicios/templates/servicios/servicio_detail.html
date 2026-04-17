@@ -1,0 +1,14 @@
+{% extends 'servicios/base.html' %}
+
+{% block contenido %}
+    <h1>Servicio - Detalle</h1>
+
+    <p>Nombre: {{ object.nombre }}</p>
+    <p>Descripción: {{ object.descripcion }}</p>
+    <p>Precio: ${{ object.precio }}</p>
+    <p>Disponible: {% if object.disponible %}Sí{% else %}No{% endif %}</p>
+
+    <button><a href="{% url 'servicio_update' object.id %}">Editar</a></button>
+    <button><a href="{% url 'servicio_delete' object.id %}">Eliminar</a></button>
+    <button><a href="{% url 'servicio_list' %}">Volver</a></button>
+{% endblock contenido %}

@@ -2,12 +2,17 @@
 
 {% block contenido %}
     <h1>Pedidos</h1>
+    <button><a href="{% url 'pedido_create' %}">Crear nuevo pedido</a></button>
+
     {% for pedido in object_list %}
         <p>
-            <strong>Servicio:</strong> {{ pedido.servicio | upper }}
-            <strong>Cliente:</strong> {{ pedido.cliente | upper }}
-            <strong>Fecha:</strong> {{ pedido.fecha_solicitud }}
-            <strong>Estado:</strong> {{ pedido.estado }}
+            <strong>Servicio:</strong> {{ pedido.servicio }}
+            | <strong>Cliente:</strong> {{ pedido.cliente }}
+            | <strong>Fecha:</strong> {{ pedido.fecha_solicitud }}
+            | <strong>Estado:</strong> {{ pedido.estado }}
+            | <a href="{% url 'pedido_detail' pedido.id %}">👁️‍🗨️</a>
+            | <a href="{% url 'pedido_update' pedido.id %}">✏️</a>
+            | <a href="{% url 'pedido_delete' pedido.id %}">🗑️</a>
         </p>
     {% empty %}
         <p>No hay registros</p>

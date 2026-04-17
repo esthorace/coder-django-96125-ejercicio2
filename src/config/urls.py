@@ -38,5 +38,31 @@ urlpatterns = [
         name="cliente_delete",
     ),
     path("servicio/", servicio.ServicioList.as_view(), name="servicio_list"),
+    path("servicio/create/", servicio.ServicioCreate.as_view(), name="servicio_create"),
+    path(
+        "servicio/<int:pk>/update",
+        servicio.ServicioUpdate.as_view(),
+        name="servicio_update",
+    ),
+    path(
+        "servicio/<int:pk>", servicio.ServicioDetail.as_view(), name="servicio_detail"
+    ),
+    path(
+        "servicio/<int:pk>/delete",
+        servicio.ServicioDelete.as_view(),
+        name="servicio_delete",
+    ),
     path("pedido/", pedido.PedidoList.as_view(), name="pedido_list"),
+    path("pedido/create/", pedido.PedidoCreate.as_view(), name="pedido_create"),
+    path(
+        "pedido/<int:pk>/update",
+        pedido.PedidoUpdate.as_view(),
+        name="pedido_update",
+    ),
+    path("pedido/<int:pk>", pedido.PedidoDetail.as_view(), name="pedido_detail"),
+    path(
+        "pedido/<int:pk>/delete",
+        pedido.PedidoDelete.as_view(),
+        name="pedido_delete",
+    ),
 ]

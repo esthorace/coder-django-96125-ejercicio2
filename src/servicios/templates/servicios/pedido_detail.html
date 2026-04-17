@@ -1,0 +1,18 @@
+{% extends 'servicios/base.html' %}
+
+{% block contenido %}
+    <h1>Pedido - Detalle</h1>
+
+    <p>Cliente: {{ object.cliente }}</p>
+    <p>Servicio: {{ object.servicio }}</p>
+    <p>Precio acordado: ${{ object.precio_acordado }}</p>
+    <p>Descripción: {{ object.descripcion }}</p>
+    <p>Estado: {{ object.estado }}</p>
+    <p>Fecha de solicitud: {{ object.fecha_solicitud }}</p>
+    <p>Última actualización: {{ object.fecha_actualizacion }}</p>
+    <p>Fecha de finalización: {{ object.fecha_finalizacion }}</p>
+
+    <button><a href="{% url 'pedido_update' object.id %}">Editar</a></button>
+    <button><a href="{% url 'pedido_delete' object.id %}">Eliminar</a></button>
+    <button><a href="{% url 'pedido_list' %}">Volver</a></button>
+{% endblock contenido %}

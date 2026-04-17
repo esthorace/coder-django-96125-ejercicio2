@@ -1,0 +1,23 @@
+{% extends 'servicios/base.html' %}
+
+{% block contenido %}
+    <h1>Pedido:
+        {% if form.instance.pk %}
+            Editar "{{ form.instance }}"
+        {% else %}
+            Crear
+        {% endif %}
+    </h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">
+            {% if form.instance.pk %}
+                Actualizar Pedido
+            {% else %}
+                Guardar Nuevo Pedido
+            {% endif %}
+        </button>
+    </form>
+    <button><a href="{% url 'pedido_list' %}">Volver</a></button>
+{% endblock contenido %}
